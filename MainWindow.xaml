@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="KinectInterface" Height="525.497" Width="889.885" Background="#3e3e3e" Loaded="frmKinectInterface_Loading" Closing="frmKinectInterface_Colsing">
+    <Grid Margin="0,0,0,-14">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="41*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Canvas x:Name="canDraw" Height="480"   Width="640" Margin="10,10,232,1.5">
+            <!--Video____________________________________________________________________________________________________ -->
+            <Image x:Name="imgVideo" HorizontalAlignment="Left" Height="480" Margin="0,0,0,0" VerticalAlignment="Top" Width="640" />
+            <!--Video____________________________________________________________________________________________________ -->
+            <!--Grid selection__________________________________________________________________________________________________ -->
+            <Grid x:Name="grdOverlay" Height="480" Width="640" ShowGridLines="True">
+            </Grid>
+            <!--Grid selection__________________________________________________________________________________________________ -->
+        </Canvas>
+
+
+        <!-- Information for Debugging __________________________________________________________________________________________ -->
+        <Rectangle x:Name="imgControl" Fill="#FFAA3131" HorizontalAlignment="Left" Height="480" Margin="664,10,0,0" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="215"/>
+        <!-- Gestures-->
+        <TextBlock x:Name="txtGestureText" HorizontalAlignment="Left" Margin="668,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="Gestures : "/></TextBlock>
+        <TextBlock x:Name="txtGesture" HorizontalAlignment="Left" Margin="668,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text=""/></TextBlock>
+        <!-- Voice Commands-->
+        <TextBlock x:Name="txtVoiceCommandText" HorizontalAlignment="Left" Margin="668,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-gb" Text="Voice Commands : "/></TextBlock>
+        <TextBlock x:Name="txtVoiceCommand" HorizontalAlignment="Left" Margin="668,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="88" Width="187"><Run Language="en-gb" Text=""/></TextBlock>
+        <!-- Grid Selection-->
+        <TextBlock x:Name="txtSelectedTileText" HorizontalAlignment="Left" Margin="669,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.09,0.437"><Run Language="en-gb" Text="Selected Tile: "/></TextBlock>
+        <TextBlock x:Name="txtSelectedTile" HorizontalAlignment="Left" Margin="669,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <!-- Modify Camera-->
+        <Slider x:Name="sldCamera" HorizontalAlignment="Left" Margin="839,235,0,0" VerticalAlignment="Top" Width="16" Orientation="Vertical" Height="210" Minimum="-27" Maximum="27"/>
+        <Button Content="P&#xD;&#xA;" HorizontalAlignment="Left" Margin="841,450,0,0" VerticalAlignment="Top" Width="16" Height="21" Click="btnCameraMotors"/>
+        <!-- Swap Hands-->
+        <!-- Settings and Help-->
+        <Button Content="Settings" HorizontalAlignment="Left" Margin="667,12,0,0" VerticalAlignment="Top" Width="102"/>
+        <Button Content="Help" HorizontalAlignment="Left" Margin="770,12,0,0" VerticalAlignment="Top" Width="102"/>
+        <!-- Information for Debugging __________________________________________________________________________________________ -->
+    </Grid>
+</Window>
